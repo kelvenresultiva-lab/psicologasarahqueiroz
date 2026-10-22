@@ -2,6 +2,40 @@
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18515831635"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18515831635');
+</script>
+<!-- Google Ads: conversão de contato pelo WhatsApp -->
+<script>
+  function gtag_report_conversion(url) {
+    var navigated = false;
+
+    var callback = function () {
+      if (!navigated && typeof url !== 'undefined') {
+        navigated = true;
+        window.location.href = url;
+      }
+    };
+
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18515831635/4KmOCNGenJ4dENPWhP1E',
+      'event_callback': callback
+    });
+
+    setTimeout(callback, 1000);
+    return false;
+  }
+  // links de WhatsApp montados por JavaScript (plugin Joinchat): o próprio plugin abre o WhatsApp
+  document.addEventListener('joinchat:open', function () {
+    gtag('event', 'conversion', { 'send_to': 'AW-18515831635/4KmOCNGenJ4dENPWhP1E' });
+  });
+</script>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<title>Política de Privacidade | Sarah Queiroz</title>
 	<meta name="description" content="Política de Privacidade do site da psicóloga Sarah Queiroz, CRP 04/83515: como os dados de contato são tratados, sigilo profissional e direitos previstos na LGPD.">
@@ -166,7 +200,7 @@
 			<section id="alteracoes">
 				<h2><span>10</span>Alterações e contato</h2>
 				<p>Esta política pode ser atualizada sempre que necessário. A data da última atualização fica indicada no topo desta página.</p>
-				<p>Em caso de dúvidas sobre esta política ou sobre o tratamento dos seus dados, entre em contato pelo <a href="https://wa.me/553397310123?text=Ol%C3%A1%2C%20Sarah%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20a%20Pol%C3%ADtica%20de%20Privacidade" target="_blank" rel="noopener">WhatsApp</a>.</p>
+				<p>Em caso de dúvidas sobre esta política ou sobre o tratamento dos seus dados, entre em contato pelo <a href="https://wa.me/553397310123?text=Ol%C3%A1%2C%20Sarah%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20a%20Pol%C3%ADtica%20de%20Privacidade" target="_blank" rel="noopener" onclick="return gtag_report_conversion(this.href);">WhatsApp</a>.</p>
 			</section>
 		</article>
 	</main>
